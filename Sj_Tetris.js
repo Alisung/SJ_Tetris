@@ -12,7 +12,7 @@
         var bool_key = false; //
         var bool_auto = false; // 자동으로 내려갈땐 0 , 키를 누르면 1???
         // 블록 모양을 정하는 변수는 0~6으로 랜덤 할당
-        var block_select_1 =  Math.floor(Math.random() * 8);
+        var block_select_1 =  Math.floor(Math.random() * 7);
         // 블록 회전을 정하는 변수는 0~3까지 반복하도록
         var block_select_2 = 0;
         var Time_;
@@ -181,7 +181,7 @@
                 }
             }
             //작업이 다끝나고 난뒤에 원레 위치로
-            block_select_1 =  Math.floor(Math.random() * 8);
+            block_select_1 =  Math.floor(Math.random() * 7);
             start_X = 0;
             start_y = 3;
             bool_fix = false;
