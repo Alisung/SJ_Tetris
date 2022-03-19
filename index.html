@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" type="text/css" href="Sj_Tetris.css">
+    <script type="text/javascript" src = "Sj_Tetris.js"></script>
+    <script type="text/javascript" src = "Sj_Tetris_data.js"></script>
+    <title>Game center</title>
+    <style>
+        
+        body{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav id ="Game_list">
+        <h1>SJ게임센터</h1>
+        <ul>
+            <li>테트리스</li>
+            <li>팩맨(개발예정)</li>
+        </ul>
+    <nav>
+    
+
+    <div id = "canvas_Design">
+
+        <div id ="Game_Stage">
+            <canvas id="MyCanvas" width="300" height="580"></canvas>
+        </div>
+
+        <div id ="Game_panel">
+            <table class="tetris_button_panel" cellpadding="5">
+                <tr>
+                    <td style ="background-color: white; "id = "tetris_left_button" class="tetris_button">←</td>
+                    <td style ="background-color: white; "id = "tetris_down_button" class="tetris_button">↓</td>
+                    <td style ="background-color: white; "id = "tetris_right_button" class="tetris_button">→</td>
+                    <td style ="background-color: white;" id ="tetris_rotate_button" class="tetris_button">회전</td>
+                    <td style ="background-color: white; " id ="tetris_repid_down_button" class="tetris_button" >밑으로쭈욱~</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <!--<button id = "left" onclick="keyleft()">←</button>
+    <button id = "down" onclick="keydown()">↓</button>
+    <button id = "right" onclick="keyright()">→</button>
+    <button id = "lotate" onclick="keylotate()">＠</button>
+    <button id = "fix" onclick="keyfix()">※</button>-->
+
+</body>
+
+<script>
+    window.onload = function() {
+        init_();
+        run();
+    }
+</script>
+
+</html>

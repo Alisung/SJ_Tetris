@@ -1,3 +1,42 @@
-.tetris_button{
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#canvas_Design{
+    margin: 20px;
+    float: left;
     border : 2px solid #000;
 }
+#Game_list {
+    float: left;
+}
+li{
+    list-style-type: none;
+    background-color: aliceblue;
+    float: left;
+    line-height: 20px;
+    padding-left: 20px;
+
+}
+h1{
+    text-align: center;
+}
+
+#Game_Stage {
+    float: left;
+} 
+canvas{
+    border : 3px solid #000;
+    background-color: silver;
+}
+
+.tetris_button{
+    border : 2px solid #000;
+    
+}
+
+/* #Game_panel{
+    float: ;
+} */
