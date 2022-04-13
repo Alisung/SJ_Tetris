@@ -25,7 +25,7 @@
         var pat;
         var a = 0;
         var RL_auto_count = 0; // 왼쪽이나 오른쪽 이동할 때 아래로 내려가기 위해 필요함
-        var speed_up = 0;
+        //var speed_up = 0;
         var delete_line_count = 0;
 
         function init_() {
@@ -65,7 +65,7 @@
                 }
             }
         }
-        // 블록 4*4 필요한 만큼 복사 겸 생성
+        // 블록 4*4 필요한 만큼 복사
         function create_block() {
             for(var i = 0; i<4; i++) {
                 for(var j =0; j<4; j++) {
@@ -150,30 +150,37 @@
         }
         function keyleft(){
             RL_auto_count ++;
-            bool_fix = false;
+
+            // if(bool_fix == true) {
+            //     keyfix();
+            // } 
             start_y--;
             if(Conflict_handling()) {
                 start_y++;
             }
-            
+            bool_fix = false;
             run();
         }
 
         function keyright(){
             RL_auto_count ++;
-            bool_fix = false;
+            // if(bool_fix == true) {
+            //     keyfix();
+            // } 
+            
             start_y++;
             if(Conflict_handling()) {
                 start_y--;
             }
-            
+            bool_fix = false;
             run();
         }
 
         function keylotate() {
             RL_auto_count ++;
-            bool_fix = false;
+            
             block_select_2++;
+            
             if(block_select_2 >= 4) {
                 block_select_2 = 0;
             }
@@ -185,7 +192,10 @@
                     block_select_2--;
                 }
             }
-            
+            // if(bool_fix == true) {
+            //     keyfix();
+            // } 
+            bool_fix = false;
             run();
         }
         // 고정시키는 함수  - i가 0,1이 아닐 때 적용됨
@@ -208,6 +218,7 @@
             bool_fix = false;
             delete_block();
             game_over();
+            clearTimeout(Time_);
             run();
         }
 
@@ -226,10 +237,10 @@
                     for(k =10; k>0; k--) {
                         Game_Stage[i][k] = 0;
                     }
-                    delete_line_count++;
-                    if(delete_line_count%2 == 0) {
-                        speed_up++;
-                    }
+                    //delete_line_count++;
+                    // if(delete_line_count%2 == 0) {
+                    //     speed_up++;
+                    // }
                     
                 }
             }
@@ -267,7 +278,7 @@
         function RL_auto_() {
             RL_auto_count++;
             if(RL_auto_count == 1) {
-                Time_2 = setTimeout(autodown,700);
+                Time_2 = setTimeout(autodown,500);
             }
         }
 
@@ -275,7 +286,7 @@
             if(Game_over == false) {
                 RL_auto_();
                 clearTimeout(Time_);
-                Time_ = setTimeout(autodown,1000 -(speed_up*100));
+                Time_ = setTimeout(autodown,500);
                 Copy_Stage(); 
                 create_block();
                 tetris_block_rocation();
